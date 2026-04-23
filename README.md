@@ -232,7 +232,13 @@ To complete your vehicle demonstration, your team must be able to launch the par
 * Configuration 1: `/pf/pose/odom` is published to at a rate of **at least 30 Hz**.
 * Configuration 2: `/pf/pose/odom` is published to at a rate of **at most 15 Hz**.
 
-You may `~/ws/src/f1tenth_unlv_veh/config/localize.yaml` as a base for the configuration. (Use `cp` to copy it.)
+You may `~/ws/src/f1tenth_unlv_veh/config/localize.yaml` as a base for the configuration. (Use `cp` to copy it.) The three most important parameters are:
+
+* `max_particles`: The most important parameter. This is the maximum number of parameters used the Particle Filter algorithm.
+    * Higher --> More accurate but more expensive 
+* `angle_step`: Parameter for downsampling range values from laser scans. For example, if it is 18, then it takes every 18th range in your laser scan.
+    * Higher --> Faster but less accurate
+* `squash_factor`: The higher it is, the more equal the weights for each of the particles are. New weights are calculated as `newweight = oldweight ^ (1/squashfactor)`.
 
 ### 2-4: Tips for Configuration
 
