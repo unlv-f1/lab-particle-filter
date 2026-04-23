@@ -232,6 +232,8 @@ To complete your vehicle demonstration, your team must be able to launch the par
 * Configuration 1: `/pf/pose/odom` is published to at a rate of **at least 30 Hz**.
 * Configuration 2: `/pf/pose/odom` is published to at a rate of **at most 15 Hz**.
 
+You may `~/ws/src/f1tenth_unlv_veh/config/localize.yaml` as a base for the configuration. (Use `cp` to copy it.)
+
 ### 2-4: Tips for Configuration
 
 Keep in mind that the performance of your particle filter **varies with each map**, depending on its size and complexity. So, for races, you may want to have several configuration files ready, and benchmark each of them on the map.
